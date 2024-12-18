@@ -175,9 +175,10 @@ int main() {
         printf("Kasir Aktif: %s\n", kasirAktif->nama);
         printf("0. Keluar\n");
         printf("1. Tambah Pesanan ke Antrian\n");
-        printf("2. Lihat Shift Kasir\n");
-        printf("3. Cek Info Pesanan\n");
-        printf("4. Cek Tray Pesanan\n");
+        printf("2. Sajikan Pesanan\n");
+        printf("3. Lihat Shift Kasir\n");
+        printf("4. Cek Info Pesanan\n");
+        printf("5. Cek Tray Pesanan\n");
         printf("Pilih: ");
         scanf("%d", &pilihan);
         
@@ -214,12 +215,54 @@ int main() {
                 }
                 break;
             }
-            case 2: {
+            case 2: { 
+    			if (pesananQueue.front) {
+        			Pesanan* temp = pesananQueue.front;
+        			printf("Daftar Pesanan yang Dapat Disajikan:\n");
+        			while (temp) {
+            			if (strcmp(temp->status, "Dipesan") == 0) {
+                			printf("ID: %d, Makanan: %s, Minuman: %s, Pemesan: %s, Tray: %d, Status: %s\n",
+                    		temp->id, temp->makanan, temp->minuman, temp->pemesan, temp->trayId, temp->status);
+            			}
+            			temp = temp->next;
+        			}
+        			printf("Masukkan ID pesanan yang ingin disajikan (Tekan 0 untuk batal): ");
+        			int idSajikan;
+        			scanf("%d", &idSajikan);
+
+        			if (idSajikan == 0) {
+            			printf("Penyajian dibatalkan.\n");
+            			getchar();
+        			} else {
+            			temp = pesananQueue.front;
+            			while (temp) {
+                			if (temp->id == idSajikan && strcmp(temp->status, "Dipesan") == 0) {
+                    		strcpy(temp->status, "Disajikan");
+                    		system("cls");
+                    	printf("Pesanan ID %d telah disajikan.\n", temp->id);
+                    	getchar();
+                    	break;
+						}
+                		temp = temp->next;
+            			}	
+            			if (!temp) {
+            				system("cls");
+                			printf("Pesanan dengan ID %d tidak ditemukan atau sudah disajikan.\n", idSajikan);
+                			getchar();
+            			}
+        			}
+    			} else {
+    				system("cls");
+        			printf("Antrian kosong. Tidak ada pesanan yang dapat disajikan.\n");
+				}
+    			break;	
+			}
+            case 3: {
                 printShiftKasir(shiftKasir, kasirAktif);
                 getchar();
                 break;
             }
-            case 3: {
+            case 4: {
                 if (pesananQueue.front) {
                     Pesanan* temp = pesananQueue.front;
                     printf("Daftar Info Pesanan (Total Pesanan: %d):\n", pesananQueue.count);
@@ -234,7 +277,7 @@ int main() {
                 getchar();
                 break;
             }
-            case 4: {
+            case 5: {
                 if (piringStack) {
                     printf("Daftar Tray Tersedia (Total Tray: %d):\n", piringStack->count);
                     Stack* temp = piringStack;
