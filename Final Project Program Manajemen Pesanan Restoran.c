@@ -130,7 +130,6 @@ int main() {
         		printf("6. Input Nama Makanan Sendiri\n");
         		printf("Pilihan: ");
         		scanf("%d", &pilihan);
-        		getchar(); 
 
         		switch (pilihan) {
             		case 1:
@@ -155,7 +154,8 @@ int main() {
                 		break;
             		default:
                 		printf("Pilihan tidak valid. Silakan coba lagi.\n");
-                		pilihan = 0; 
+                		pilihan = 0;
+						fflush(stdin);
                 		break;
        				}
     			} while (pilihan == 0);
@@ -170,7 +170,6 @@ int main() {
         			printf("6. Input Nama Minuman Sendiri\n");
         			printf("Pilihan: ");
         			scanf("%d", &pilihan);
-        			getchar(); 
 
         			switch (pilihan) {
             			case 1:
@@ -196,6 +195,7 @@ int main() {
             	       default:
             	           printf("Pilihan tidak valid. Silakan coba lagi.\n");
             	           pilihan = 0;
+            	           fflush(stdin);
             	           break;
         	       }
     	        } while (pilihan == 0);
@@ -365,6 +365,7 @@ int main() {
                 break;
             default:
                 printf("Pilihan tidak valid. Silakan coba lagi.\n");
+                fflush(stdin);
                 break;
         }
         if (pilihan != 7) {
