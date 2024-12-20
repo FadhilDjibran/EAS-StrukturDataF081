@@ -7,3 +7,4 @@
 7. Seventh Commit: Fix dequeue bug on selesaikan, add menu, add title screen
 8. Eight Commit: Fix code duplication bug on commit
 9. Ninth Commit: Fix infinite loop bug
+10. Tenth Commit: Fix skipped input bug
