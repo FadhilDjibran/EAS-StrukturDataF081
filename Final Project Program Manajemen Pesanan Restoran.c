@@ -230,7 +230,7 @@ int main() {
 
         			if (pilihan == 'y' || pilihan == 'Y') {
             			strcpy(temp->status, "Disajikan");
-            			Pesanan* disajikan = dequeue(&pesananQueue); // Dequeue pesanan
+            			Pesanan* disajikan = dequeue(&pesananQueue); 
 					if (disajikan) {
 						if (pesananDisajikanQueue.rear == NULL) {
                     		pesananDisajikanQueue.front = pesananDisajikanQueue.rear = disajikan;
@@ -239,7 +239,7 @@ int main() {
                     		pesananDisajikanQueue.rear = disajikan;
                			}		
                 		pesananDisajikanQueue.count++;
-                		disajikan->next = NULL; // Pastikan pointer berikutnya NULL
+                		disajikan->next = NULL; 
             		}
             			system("cls");
             			printf("Pesanan ID %d telah disajikan.\n", temp->id);
