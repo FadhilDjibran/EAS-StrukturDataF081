@@ -3,3 +3,4 @@
 3. Third Commit: Tambah Waktu, CASE 1 Dan enqueue
 4. Fourth Commit: Lihat Shift Kasir, Cek Info Pesanan, Cek Tray Pesanan
 5. Fifth Commit: Sajikan Pesanan 
+6. Sixth Commit:  Fix to add dequeue dan Hanya bisa sajikan pesanan terdepan (has dequeue bug on selesaikan pesanan) + add comment
