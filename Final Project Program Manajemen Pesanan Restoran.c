@@ -148,9 +148,10 @@ int main() {
                 		strcpy(makanan, "Soto Ayam");
                 		break;
                 	case 6:
+                		fflush(stdin);
                 		printf("Masukkan Nama Makanan: ");
                 		fgets(makanan, sizeof(makanan), stdin);
-                		makanan[strcspn(makanan, "\n")] = '\0'; 
+                		makanan[strcspn(makanan, "\n")] = '\0';
                 		break;
             		default:
                 		printf("Pilihan tidak valid. Silakan coba lagi.\n");
@@ -188,6 +189,7 @@ int main() {
                 			strcpy(minuman, "Soda");
                 			break;
                 		case 6:
+                			fflush(stdin);
                 			printf("Masukkan Nama minuman: ");
                 			fgets(minuman, sizeof(minuman), stdin);
                 			minuman[strcspn(minuman, "\n")] = '\0'; 
