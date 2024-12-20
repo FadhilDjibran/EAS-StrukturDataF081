@@ -5,3 +5,4 @@
 5. Fifth Commit: Sajikan Pesanan 
 6. Sixth Commit:  Fix to add dequeue dan Hanya bisa sajikan pesanan terdepan (has dequeue bug on selesaikan pesanan) + add comment
 7. Seventh Commit: Fix dequeue bug on selesaikan, add menu, add title screen
+8. Eight Commit: Fix code duplication bug on commit
